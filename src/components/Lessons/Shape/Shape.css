@@ -1,0 +1,46 @@
+.card-front-shapes{
+    background-color: var(--ocean-light-teal);
+    outline: 3px dashed var(--ocean-teal);
+    box-shadow: 0 3px 5px var(--dark-gray);
+    border: 2px double var(--pale-yellow);
+    outline-offset: -7px;
+}
+
+.card-back-shapes{
+    transform: rotateY(180deg);
+    background-color: var(--gray);
+
+    outline: 5px dashed var(--green);
+    box-shadow: 0 3px 5px var(--dark-gray);
+    border: 2px double var(--pale-yellow);
+    outline-offset: -7px;
+}
+
+.card-front-shapes .card-text{
+    color: var(--ocean-orange);
+
+}
+
+.card-back-shapes .card-text{
+    color: var(--pale-yellow);
+}
+
+.card-front-shapes .card-text, .card-back-shapes .card-text{
+    font-weight: bold;
+}
+
+.card-back-shapes .card-title-back{
+    color: var(--silver);
+}
+
+
+.bubbles-shapes{
+  font-family: "Rubik Doodle Shadow", system-ui;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ocean-teal);
+  border-bottom: 1px solid var(--ocean-orange);
+  }
+
+

@@ -1,0 +1,48 @@
+.card-front-numbers{
+    background-color: var(--silver);
+    outline: 5px dashed var(--pale-yellow);
+    box-shadow: 0 3px 5px var(--dark-gray);
+    border: 2px double var(--green);
+    outline-offset: -7px;
+}
+
+.card-back-numbers{
+    transform: rotateY(180deg);
+    background-color: var(--gray);
+
+    outline: 5px dashed var(--green);
+    box-shadow: 0 3px 5px var(--dark-gray);
+    border: 2px double var(--pale-yellow);
+    outline-offset: -7px;
+}
+
+.card-front-numbers .card-text{
+    color: var(--green);
+}
+
+.card-back-numbers .card-text{
+    color: var(--pale-yellow);
+}
+
+.card-front-numbers .card-text, .card-back-numbers .card-text{
+    text-shadow: 2px 2px var(--dark-gray);
+}
+
+.card-back-numbers .card-title-back{
+    color: var(--silver);
+}
+
+
+.bubbles-numbers{
+    font-family: "Rubik Doodle Shadow", system-ui;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--green);
+  border-bottom: 1px solid var(--magenta);
+  }
+
+.number-icon{
+    display: inline;
+}
+

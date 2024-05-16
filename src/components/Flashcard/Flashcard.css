@@ -1,0 +1,120 @@
+
+.flashcard {
+    width: 90%;
+    height: 450px;
+    margin: 0 auto;
+    border: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.flashcard .card-body{
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+}
+
+.is-flipped .card-body{
+    transform: translateX(-100%) rotateY(180deg);
+}
+
+.card-front, .card-back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    padding:5%;
+}
+
+.card-title{
+    font-size: 30px;
+  }
+
+.card-img{
+    max-height: 250px;
+    filter: drop-shadow(2px 2px 1px var(--dark-gray))
+}
+.word-div button{
+    background-color: transparent;
+    border:none;
+    display: inline-block;
+    padding: 0;
+}
+.word-div button img{
+    height: 30px;
+    vertical-align: top;
+    filter:drop-shadow(1px 1px var(--dark-gray));
+}
+
+.word-div .card-text{
+    display: inline-block;
+    font-size: 24px;
+
+}
+.btnDivBtm{
+    position:absolute;
+    width: 95%;
+    padding: 10px;
+    bottom: 0;
+    text-align: right !important;
+    cursor: pointer;
+    filter:drop-shadow(0 1px var(--dark-gray))
+}
+
+.flip-btn{
+    width: 40px;
+}
+
+.say-btn{
+    margin-left: 5px;
+}
+
+.number-container{
+    height: 250px;
+    width: 115%;
+    align-content: center;
+    justify-content: center;
+    margin-left: -8%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number-icon{
+    flex: 1 1;
+}
+
+
+.number-container .card-img{
+    display: inline-block;
+    /* margin: auto; */
+}
+
+.number-container .number-icon:nth-child(1){
+    margin-left: -5%;
+}
+.number-container .number-icon:nth-child(2){
+    margin-left: -15%
+}
+
+.icons-container{
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    align-items: center;
+}
+
+.icon-div{
+    vertical-align: middle;
+    flex: 1 1 18%;
+    min-height: 0
+}
+
+.icon-div img {
+    filter: drop-shadow(2px 2px 1px var(--dark-gray));
+    max-height: 150px;
+}

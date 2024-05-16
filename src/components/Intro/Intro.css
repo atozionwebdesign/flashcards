@@ -1,0 +1,15 @@
+#introDiv{
+    width: 100%;
+    height: 100%;
+    color: var(--silver);
+    padding: 1%;
+}
+
+#introDiv p{
+    color: var(--red);
+}
+
+#topDiv{
+    margin: 10% 0;
+    padding: 20px;
+}

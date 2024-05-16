@@ -1,0 +1,37 @@
+.card-front-alphabets{
+    background-image: linear-gradient(to bottom left, var(--light-orange), var(--light-purple), var(--light-orange));
+    outline: 5px dashed var(--teal);
+    box-shadow: 0 3px 5px var(--dark-gray);
+    border: 2px double var(--orange);
+    outline-offset: -7px;
+}
+
+.card-front-alphabets .card-text{
+    color: var(--orange);
+}
+
+.card-back-alphabets{
+    transform: rotateY(180deg);
+    background-image: linear-gradient(to bottom left, var(--light-purple), var(--light-orange), var(--light-purple));
+    outline: 5px dashed var(--orange);
+    box-shadow: 0 3px 5px var(--dark-gray);
+    border: 2px double var(--teal);
+    outline-offset: -7px;
+}
+
+.card-back-alphabets .card-text{
+    color: var(--teal);
+}
+
+.card-front-alphabets .card-text, .card-back-alphabets .card-text{
+    text-shadow: 2px 2px var(--dark-gray);
+}
+
+.bubbles-alphabets{
+    font-family: "Rubik Bubbles", system-ui;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--yellow);
+  border-bottom: 3px solid var(--purple);
+  }
