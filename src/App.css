@@ -1,13 +1,12 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Barriecito');
 
 .App {
   text-align: center;
   height: 100vh;
   width:100%;
-  position: relative;
-  background-color: var(--dark-gray);
-  /* background-image: linear-gradient(to right, var(--dark-gray), var(--dark-gray) 20%, var(--dark-gray)); */
+  padding: 3% 10% 0 10%;
+  background-color: var(--light-gray);
     font-family: "Ubuntu", sans-serif;
     color: var(--dark-gray);
 }
@@ -18,6 +17,10 @@
   --dark-gray: #0a0a0a;
   --silver:#C4CED4;
   --dark-silver: #757b7f;
+  --off-white: #FAF9F6;
+  --home-red: #FF1134;
+  --home-dark-blue: #3F76FF;
+  --home-blue: #4292FF;
 
   --yellow: #fdff3d;
   --orange: #ff9a34;
@@ -61,6 +64,15 @@ h3{
   font-size: 30px;
 }
 
+.barriecito-regular {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.row{
+  margin:0;
+}
 
 .btn-primary:active {
   --bs-btn-active-bg: transparent;
@@ -71,72 +83,141 @@ h3{
   display: none;
 }
 
-#containerDiv{
-  width: 85%;
-  height: 90%;
-  top: 50%;
-  left: 20%;
-  position: absolute;
-  transform: translateY(-50%) translateX(-20%);
-  border: 5px solid var(--dark-silver);
-border-style: groove;
-box-shadow: inset 1px 1px 20px var(--dark-gray), 0 0 10px var(--dark-silver);
-border-radius: 10%
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
+.flex-grow-0{
+  flex: 0 0 auto;
+}
+.flex-grow-1{
+  flex: 1 1 auto;
+}
+
+#appContent .col{
+  height: 100%;
+}
+
+#containerDiv{
+height: 90%;
+margin: auto;
+border: 1px solid var(--gray);
+background-color: var(--dark-gray);
+border-radius: 10%;
+justify-content: center;
+align-items: center;
+padding: 1% 1% 5% 1%;
+position: relative;
+}
+
+#tvContainerDiv{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: var(--home-red);
+  /* background-image: linear-gradient(var(--home-red) 70%, var(--home-blue) ); */
+  border: 5px solid var(--gray);
+border-style: groove;
+box-shadow: inset 1px 1px 20px var(--dark-gray), 0 0 10px var(--dark-silver);
+border-radius: 10%;
+position: relative;
+}
+
+#tvLegsDiv{
+  height: 10%;
+  width: 30%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tv-leg{
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-gray);
+  border-bottom: 1px solid var(--gray);
+  margin: 0;
+}
+
+.curve{
+  text-align: left;
+  width: 5%;
+  height:100%;
+  background-color: var(--light-gray);
+  content: "";
+  display: inline-block;
+}
+
+#curveLeft{
+  border-radius: 0 30% 30% 0;
+  position: absolute;
+  left: 0
+}
+
+#curveRight{
+  border-radius:  30% 0 0 30%;
+
+  position: absolute;
+  right: 0
+}
 #content{
   width: 100%;
   height: 100%;
 }
-#welcomeMsgDiv{
-  color: red;
-  width: 100%
-}
 
 #remoteContainerDiv{
 position:absolute;
-right: 0;
-height: 100%;
-width:12%;
+right: 5%;
+bottom: 0;
+height: fit-content;
 text-align: center;
 padding: 5% 0;
+filter:drop-shadow(1px 5px 5px var(--gray));
 }
 
 #remoteDiv{
-  border: 3px solid var(--gray);
-  border-radius: 5px;;
-  width: 75%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 40px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
   position: relative;
   background-color: var(--dark-gray);
-}
-#powerBtn{
-  position:absolute;
-  right:0;
-  margin: -35px 10px 0 10px;
-  background-color: var(--red);
-  border-color: var(--dark-silver)
+
 }
 
-#remoteTitle{
+
+#powerBtn{
+  background-color: var(--home-red);
+  border-color: black;
+  color:var(--dark-gray);
+  border-radius: 50%;
+}
+
+#tvTitle, #remoteTitle{
   color: var(--dark-silver);
+  margin-bottom: 0;
   font-weight: bold;
-  margin: 5px auto;
-  position: absolute;
-  bottom:0;
+}
+
+#tvTitle{
+  color: var(--dark-silver);
+  bottom: 1%;
   left: 50%;
-  transform: translateX(-50%);
+  transform:translateX(-50%);
+  position: absolute;
+}
+
+#tvBtnDiv{
+  padding-top: 20px;
 }
 
 .tv-btn, .tv-btn-rect{
-  /* background-color: var(--silver); */
   background-color: var(--dark-gray);
-  color: var(--silver);
-  border: 2px solid var(--gray);
-  border-style: groove;
-  box-shadow: inset 1px 1px var(--dark-silver);
+  border: 2px solid black;
+  box-shadow: inset 1px 1px black;
   display: block;
   margin: 0 auto 20px auto;
 }
@@ -146,8 +227,8 @@ padding: 5% 0;
 }
 
 .tv-btn:hover, .tv-btn:active, .tv-btn-rect:hover, .tv-btn-rect:active{
-  background-color: var(--dark-silver);
-  border-color: var(--dark-gray);
+  background-color: transparent;
+  border-color: var(--gray);
 }
 
 .tv-btn img, .tv-btn-rect img{

@@ -2,7 +2,7 @@ import "./Flashcard.css";
 
 import { classNames } from "../../utils/Helpers";
 
-import { Card } from "react-bootstrap";
+import { Card, Row, Col, Stack } from "react-bootstrap";
 import { SayButton } from "react-say";
 
 const Flashcard = (props) => {
@@ -57,77 +57,106 @@ const Flashcard = (props) => {
     <Card className="flashcard" id={"card-" + id}>
       <Card.Body>
         <div className={classNames("card-front", `card-front-${name}`)}>
-          <Card.Title className={classNames("card-title", `card-title-front`)}>
-            {title}
-          </Card.Title>
-          <div className="word-div">
-            <Card.Text className="card-text">{wordFront}</Card.Text>
-            <SayButton speak={wordFront}>
-              <img
-                className="say-btn"
-                alt=""
-                src={buttons[`${name}-say-front`]}
-              />
-            </SayButton>
-          </div>
+          <div className="flex-container">
+            <Card.Title
+              className={classNames(
+                "card-title",
+                `card-title-front`,
+                "flex-grow-0"
+              )}
+            >
+              {title}
+            </Card.Title>
 
-          {name === "numbers" && iconFront.length > 1 ? (
-            <div className="number-container">
-              {iconFront.map((icon, i) => {
-                console.log(iconFront.length);
-                return (
-                  <div className="number-icon" key={`div-${i}`}>
-                    <Card.Img src={icon} alt="" key={i} />
-                  </div>
-                );
-              })}
+            <div className="word-div flex-grow-0">
+              <Card.Text className="card-text">{wordFront}</Card.Text>
+              <SayButton speak={wordFront}>
+                <img
+                  className="say-btn"
+                  alt=""
+                  src={buttons[`${name}-say-front`]}
+                />
+              </SayButton>
             </div>
-          ) : (
-            <Card.Img src={iconFront} alt="" />
-          )}
+            {name === "numbers" && iconFront.length > 1 ? (
+              <div className="number-container flex-grow-1">
+                {iconFront.map((icon, i) => {
+                  return (
+                    <div className="number-icon" key={`div-${i}`}>
+                      <Card.Img src={icon} alt="" key={i} />
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div
+                className="flex-grow-1"
+                style={{
+                  height: "60%",
+                }}
+              >
+                <Card.Img src={iconFront} alt="" />
+              </div>
+            )}
 
-          <div className="btnDivBtm">
-            <img
-              className="flip-btn"
-              onClick={handleCardClick}
-              alt=""
-              src={buttons[`${name}-rotate-front`]}
-            />
+            <div className="btnDivBtm flex-grow-0">
+              <img
+                className="flip-btn"
+                onClick={handleCardClick}
+                alt=""
+                src={buttons[`${name}-rotate-front`]}
+              />
+            </div>
           </div>
         </div>
         <div className={classNames("card-back", `card-back-${name}`)}>
-          {name !== "numbers" ? (
-            <Card.Title className={classNames("card-title", `card-title-back`)}>
-              {title}
-            </Card.Title>
-          ) : (
-            ""
-          )}
+          <div className="flex-container">
+            {name !== "numbers" ? (
+              <Card.Title
+                className={classNames(
+                  "card-title",
+                  `card-title-back`,
+                  "flex-grow-0"
+                )}
+              >
+                {title}
+              </Card.Title>
+            ) : (
+              ""
+            )}
 
-          <div className="word-div">
-            <Card.Text className="card-text">{wordBack}</Card.Text>
-            <SayButton speak={wordBack}>
+            <div className="word-div flex-grow-0">
+              <Card.Text className="card-text">{wordBack}</Card.Text>
+              <SayButton speak={wordBack}>
+                <img
+                  className="say-btn"
+                  alt=""
+                  src={buttons[`${name}-say-back`]}
+                />
+              </SayButton>
+            </div>
+            {name !== "numbers" ? (
+              <div
+                className="flex-grow-1"
+                style={{
+                  height: "60%",
+                }}
+              >
+                <Card.Img src={iconBack} alt="" />
+              </div>
+            ) : (
+              <div className="icons-container flex-grow-1">
+                {getNumberIcons()}
+              </div>
+            )}
+            <div className="btnDivBtm flex-grow-0">
               <img
-                className="say-btn"
+                className="flip-btn"
+                onClick={handleCardClick}
                 alt=""
-                src={buttons[`${name}-say-back`]}
+                src={buttons[`${name}-rotate-back`]}
               />
-            </SayButton>
-          </div>
-
-          {name !== "numbers" ? (
-            <Card.Img src={iconBack} alt="" />
-          ) : (
-            <div className="icons-container">{getNumberIcons()}</div>
-          )}
-          {/* <Card.Img src={iconBack} alt="" /> */}
-          <div className="btnDivBtm">
-            <img
-              className="flip-btn"
-              onClick={handleCardClick}
-              alt=""
-              src={buttons[`${name}-rotate-back`]}
-            />
+            </div>
           </div>
         </div>
       </Card.Body>

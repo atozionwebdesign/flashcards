@@ -24,7 +24,7 @@ function Lesson(props) {
   const crowns = {
     alphabets: require("../../assets/icons/misc/crown-alphabets.png"),
     numbers: require("../../assets/icons/misc/crown-numbers.png"),
-    shapes: require("../../assets/icons/misc/crown-shapes.png")
+    shapes: require("../../assets/icons/misc/crown-shapes.png"),
   };
   const buttons = {
     alphabets: require(`../../assets/icons/misc/next-button-alphabets.svg`)
@@ -49,7 +49,7 @@ function Lesson(props) {
   }, [deck, activeLesson]);
 
   const handleDeckClick = (e) => {
-    console.log(deck)
+    console.log(deck);
     let i = deck.indexOf(activeCard);
     let newI;
     e.target.name === "next"
@@ -64,21 +64,23 @@ function Lesson(props) {
   };
 
   return (
-    <div
+    <Row
       id="lessonContentDiv"
       ref={lessonContentDivRef}
-      style={{ ...props.style }}
+      style={{ ...props.style}}
     >
-      <div id="titleDiv">
-        <img src={crowns[name]} alt="" id="crown" />
-        <p className="title">
-          ZION's World of <span className={`bubbles-${name}`}>{title}</span>
-        </p>
-      </div>
+      <Col sm={12} >
+        <Row id="titleDiv" style={{width: "100%"}}>
+          <Col>
+            <img src={crowns[name]} alt="" id="crown" />
+            <p className="title">
+              ZION's World of <span className={`bubbles-${name}`}>{title}</span>
+            </p>
+          </Col>
+        </Row>
 
-      <div id="cardDiv">
         {deck.length > 0 ? (
-          <Row>
+          <Row style={{height: "calc(100% - 61px"}}>
             <Col sm={3}>
               <div className="left">
                 <img
@@ -91,14 +93,14 @@ function Lesson(props) {
               </div>
             </Col>
             <Col sm={6}>
-              <div className="deck-card">
+              {/* <div className="deck-card"> */}
                 <Flashcard
                   name={name}
                   lesson={activeLesson}
                   info={activeCard}
                   side="front"
                 />
-              </div>
+              {/* </div> */}
             </Col>
             <Col sm={3}>
               <div className="right">
@@ -115,10 +117,9 @@ function Lesson(props) {
         ) : (
           ""
         )}
-      </div>
-
-      {props.graphics}
-    </div>
+        {/* {props.graphics} */}
+      </Col>
+    </Row>
   );
 }
 

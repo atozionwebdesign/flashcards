@@ -1,16 +1,14 @@
 import "./Intro.css";
+
+import { Row } from "react-bootstrap";
+
 const Intro = () => {
-
-    return (
-        <div id="introDiv">
-            <div id="topDiv">
-            <p>Welcome to ZionTV.  </p>
-            <p>A fun place to learn about ABCs, numbers, shapes and more!  Use the buttons on the remote to change the channels and start learning.</p>
-
-            </div>
-            <div>Have Fun!</div>
-        </div>
-    )
-}
+  return (
+    <Row id="introDiv">
+     <h3 className="barriecito-regular" style={{}}>Inspired by a toddler, for toddlers...</h3>
+      <img id="logo500" src={require("../../assets/images/Zion-TV500.png")} alt="" className="align-self-end" />
+    </Row>
+  );
+};
 
 export default Intro;

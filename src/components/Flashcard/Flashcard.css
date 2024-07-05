@@ -1,7 +1,8 @@
 
 .flashcard {
-    width: 90%;
-    height: 450px;
+    width: 100%;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     border: none;
     background-color: transparent;
@@ -34,7 +35,9 @@
   }
 
 .card-img{
-    max-height: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     filter: drop-shadow(2px 2px 1px var(--dark-gray))
 }
 .word-div button{
@@ -55,10 +58,8 @@
 
 }
 .btnDivBtm{
-    position:absolute;
-    width: 95%;
+
     padding: 10px;
-    bottom: 0;
     text-align: right !important;
     cursor: pointer;
     filter:drop-shadow(0 1px var(--dark-gray))
@@ -73,23 +74,20 @@
 }
 
 .number-container{
-    height: 250px;
-    width: 115%;
+
     align-content: center;
     justify-content: center;
-    margin-left: -8%;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .number-icon{
-    flex: 1 1;
+    flex: 0 1 50%;
 }
 
 
 .number-container .card-img{
-    display: inline-block;
-    /* margin: auto; */
+    /* display: inline-block; */
+
 }
 
 .number-container .number-icon:nth-child(1){
@@ -100,18 +98,20 @@
 }
 
 .icons-container{
-    height: 250px;
-    width: 100%;
+    /* height: 250px;
+    width: 100%; */
     display: flex;
     flex-wrap: wrap;
     gap: 2px;
     align-items: center;
+    justify-content: center;
+    height: 60%;
 }
 
 .icon-div{
     vertical-align: middle;
-    flex: 1 1 18%;
-    min-height: 0
+    flex: 0 1 18%;
+    min-height: 0;
 }
 
 .icon-div img {
